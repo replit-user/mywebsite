@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <body> <!-- required or the javascript won't work, ik super wierd right? anyway update this counter when you fall victum to the crtl shift i trick: 0-->
+    <div>
+        <script>
+            document.addEventListener("keydown",function(event){
+                if(event.ctrlKey&&event.shiftKey&&event.key.toLowerCase()==="i"){
+                    alert("GET THE FRICK OUT OF MY SOURCE CODE")
+                    event.preventDefault()
+                }
+            })
+            const characters=["mario","peach","bowser","toad","rose","koopa","luigi","bowser jr","wario","yoshi","waluigi"]
+            guesses=5
+            const character=characters[Math.floor(Math.random()*characters.length)]
+            while(guesses>0){
+                const guess=prompt("guess a mario character")
+                if(guess.toLowerCase()===character){
+                    alert("you win!")
+                    guesses=-1
+                }else{
+                    alert(`no its not ${guess} good try though`)
+                    guesses-=1
+                }
+            }
+            if(guesses===0){
+                alert(`you lose the character was ${character}`)
+            }
+        </script>
+    </div>
+    </body>
+    </html>
